@@ -2,23 +2,27 @@
  * Variables
  */
 $white: #fff;
-$black: #000;
+$black: #1b1b1b;
 
-$dark: #252525;
-$gray: #919191;
-$light-gray: #cecece;
-$very-light-gray: #f8f9fc;
+$dark: #1b1b1b;
+$gray: #bbb;
+$gray2: #a8a8a8;
+$light-gray: #e7e7e7;
+$very-light-gray: #f0edee;
+$very-light-gray2: #f3f3f3;
 
-$theme-color: #132a3a;
-$theme-color2: #03686b;
-$text-color: #030303;
+$theme-color: #4a90e2;
+$theme-color2: #372772;
+$theme-color3: #d52d5d;
+$text-color: #1b1b1b;
 
-$border-color: #929292;
-$input-color: #313131;
+$border-color: #bbb;
+$input-color: #686868;
 
 $error-color: #d42c2c;
 
-$font-primary: "Figtree", serif;
+$font-primary: "Montserrat", sans-serif;
+$font-decorated: "Lato", sans-serif;
 
 $bold: 700;
 $semi-bold: 600;
@@ -26,4 +30,4 @@ $medium: 500;
 $regular: 400;
 $light: 300;
 
-$theme-border-radius: 15px;
+$theme-border-radius: 25px;

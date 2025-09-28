@@ -1,7 +1,3 @@
-/* 
- * Import fonts
- */
-
 /*
  * Typography
  */
@@ -9,80 +5,85 @@
 h1,
 .h1,
 h1 > strong,
-h1 > b,
-h1 > span {
+h1 > b {
     color: $text-color;
     font-family: $font-primary;
-    font-size: 60px;
+    font-size: 43px;
     line-height: 1.1;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
 
-    @media (width <= 767px) {
-        font-size: 58px;
+    @media (width <= 1500px) {
+        font-size: 40px;
+    }
+
+    @media (width <= 1280px) {
+        font-size: 36px;
     }
 }
 
 h2,
 .h2,
 h2 > strong,
-h2 > b,
-h2 > span {
+h2 > b {
     color: $text-color;
     font-family: $font-primary;
-    font-size: 35px;
+    font-size: 33px;
     line-height: 1.1;
     font-weight: 700;
+    text-transform: uppercase;
 
-    @media (width <= 1199px) {
+    @media (width <= 1500px) {
         font-size: 30px;
+    }
+
+    @media (width <= 1280px) {
+        font-size: 28px;
     }
 }
 
 h3,
 .h3,
 h3 > strong,
-h3 > b,
-h3 > span {
+h3 > b {
     color: $text-color;
     font-family: $font-primary;
-    font-size: 26px;
-    line-height: 1.1;
+    font-size: 20px;
+    line-height: 1.15;
     font-weight: 700;
+    text-transform: uppercase;
 
-    @media (width <= 1199px) {
-        font-size: 22px;
+    @media (width <= 1500px) {
+        font-size: 21px;
     }
 }
 
 h4,
 .h4,
 h4 > strong,
-h4 > b,
-h4 > span {
+h4 > b {
     color: $text-color;
     font-family: $font-primary;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.1;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
 
-    @media (width <= 1199px) {
+    @media (width <= 1500px) {
         font-size: 18px;
     }
 }
 
 p,
 .paragraph {
-    font-size: 17px;
+    font-size: 17.8px;
     line-height: 1.65;
-    font-weight: 400;
-    margin: 20px 0 0;
+    font-weight: 500;
+    margin: 17px 0 0;
     color: $text-color;
 
     > a {
         font-weight: 500;
-        font-size: 17px;
-        line-height: 1.65;
         text-decoration: underline;
         display: inline-block;
         color: $text-color;
@@ -93,40 +94,25 @@ p,
         }
     }
 
-    > strong {
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 1.65;
-        color: $text-color;
+    > span:not(.woocommerce-Price-amount),
+    em {
+        font-weight: 500 !important;
+        font-size: 17.8px !important;
+        line-height: 1.65 !important;
     }
 
-    > span {
+    > strong {
+        font-weight: 700;
+    }
+
+    @media (width <= 1280px) {
         font-size: 17px;
-        line-height: 1.65;
-        font-weight: 400;
-        color: $text-color;
     }
 }
 
 ul > li,
-ol > li,
-ul.wp-block-list li,
-ol.wp-block-list li {
-    font-size: 17px;
+ol > li {
+    font-size: 17.8px;
     line-height: 1.65;
-    font-weight: 400;
-
-    > strong {
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 1.65;
-        color: $text-color;
-    }
-
-    > span {
-        font-size: 17px;
-        line-height: 1.65;
-        font-weight: 400;
-        color: $text-color;
-    }
+    font-weight: 500;
 }

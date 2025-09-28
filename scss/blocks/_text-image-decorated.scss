@@ -12,11 +12,18 @@
     &__content {
         width: 100%;
         padding: 0 0 0 30px;
-        border-left: 4px solid $theme-color;
+        border-left: 4px solid $theme-color2;
 
         p {
             margin: 0;
             text-transform: initial;
+            max-width: 594px;
+
+            span {
+                font-size: 19px;
+                line-height: 1.3;
+                text-transform: initial;
+            }
 
             @extend .h2;
         }
@@ -47,9 +54,12 @@
         max-width: 200px;
         height: 200px;
         margin-left: auto;
+        border-radius: 20px;
+        flex-shrink: 0;
 
         img {
             object-position: left;
+            border-radius: 20px;
         }
 
         &--circle {

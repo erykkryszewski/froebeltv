@@ -1,18 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let header = document.querySelector(".header");
-    let footer = document.querySelector(".footer");
-    let main = document.querySelector("main#main");
-    let body = document.body;
+import $ from "jquery";
 
-    let headerHeight = header.offsetHeight;
-    let footerHeight = footer.offsetHeight + 60;
-    let footerHeightWithAdminBar = footer.offsetHeight + 60 + 32;
+// get footer height and set main min height
 
-    if (body.classList.contains("admin-bar")) {
-        main.style.minHeight = "calc(100vh - " + footerHeightWithAdminBar + "px)";
-        main.style.paddingTop = headerHeight + "px";
+$(document).ready(function () {
+    let headerHeight = $(".header").height(); // 60 is a footer margin top
+    let footerHeight = $(".footer").height() + 60; // 60 is a footer margin top
+    let footerHeightWithAdminBar = $(".footer").height() + 60 + 32; // 60 is a footer margin top
+    let main = $("main#main");
+
+    if ($("body").hasClass("admin-bar")) {
+        main.css({
+            minHeight: "calc(100vh - " + footerHeightWithAdminBar + "px)",
+            paddingTop: headerHeight,
+        });
     } else {
-        main.style.minHeight = "calc(100vh - " + footerHeight + "px)";
-        main.style.paddingTop = headerHeight + "px";
+        main.css({
+            minHeight: "calc(100vh - " + footerHeight + "px)",
+            paddingTop: headerHeight,
+        });
     }
 });

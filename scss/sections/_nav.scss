@@ -13,10 +13,11 @@
     }
 
     &__logo {
-        width: 250px;
+        width: 220px;
         flex-shrink: 0;
         position: relative;
         transition: all 250ms ease;
+        margin: 0;
 
         img,
         svg {
@@ -24,8 +25,17 @@
             height: auto;
         }
 
-        @media (width <= 991px) {
+        @media (width <= 1279px) {
             position: static;
+            margin: 0;
+        }
+
+        @media (width <= 767px) {
+            width: 200px;
+        }
+
+        @media (width <= 360px) {
+            width: 180px;
         }
     }
 
@@ -48,7 +58,7 @@
                 img {
                     filter: brightness(0) invert(1);
 
-                    @media (width <= 991px) {
+                    @media (width <= 1279px) {
                         filter: brightness(0) invert(1);
                     }
                 }
@@ -61,13 +71,14 @@
     }
 
     &__button {
-        margin: 0 0 0 30px;
-        border: 2px solid $theme-color;
+        margin: 0 0 0 25px;
+        border: 2px solid $theme-color3;
+        font-size: 13px;
 
         &:hover {
-            border: 2px solid $theme-color;
+            border: 2px solid $theme-color3;
             color: $white;
-            background: $theme-color;
+            background: $theme-color3;
         }
 
         &--tel {
@@ -105,93 +116,91 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        gap: 10px;
 
-        > li {
-            margin: 0;
+        li {
+            margin: 0 0 0 rem-calc(10);
             position: relative;
 
             &:first-child {
-                margin: 0 0 0 15px;
+                margin: 0;
             }
 
-            > a {
-                font-size: 17px;
-                font-weight: 500;
-                padding: 5px;
-                color: $text-color;
+            a {
+                font-size: 14px;
+                font-weight: 600;
+                padding: 4.7px;
+                color: $theme-color2;
                 transition: all 300ms ease;
-
-                &::before {
-                    content: "";
-                    width: calc(100% - 10px);
-                    height: 2px;
-                    left: 5px;
-                    bottom: 0;
-                    background: $theme-color2;
-                    display: block;
-                    position: absolute;
-                    transition: all 300ms ease;
-                    transform: scale(0, 1);
-                    transform-origin: center;
-
-                    @media (width <= 1199px) {
-                        display: none;
-                    }
-                }
+                text-transform: uppercase;
 
                 &:hover {
-                    color: $theme-color2;
-
-                    &::before {
-                        transform: scale(1, 1);
-                    }
-
                     + ul.sub-menu {
-                        @media (width >= 1200px) {
-                            transform: scale(1);
+                        @media (width >= 1280px) {
+                            transform: scale(1, 1);
+                            transition-delay: 0.1s;
                         }
                     }
                 }
 
-                @media (width <= 1199px) {
+                &:not(:hover) {
+                    + ul.sub-menu {
+                        @media (width >= 1280px) {
+                            transition-delay: 0.2s;
+                        }
+                    }
+                }
+
+                @media (width <= 1330px) {
+                    font-size: 12px;
+                }
+
+                @media (width <= 1279px) {
                     padding: 10px 0;
-                    color: $text-color;
+                    color: $theme-color2;
                     text-transform: uppercase;
                     font-size: 16px;
                 }
             }
 
+            &:last-child {
+                a {
+                    padding: 4.7px 0 4.7px 4.7px;
+                }
+            }
+
             &.menu-item-has-children {
                 > a {
-                    @media (width >= 1200px) {
-                        padding: 5px 5px 43px;
-                        margin: 0 0 -38px;
+                    @media (width >= 1280px) {
+                        padding: 4.7px 4.7px 31px;
+                        margin: 0 0 -26px;
                     }
                 }
             }
 
             > ul.sub-menu {
                 display: block;
-                min-width: 320px;
+                min-width: 160px;
 
                 li {
+                    margin: 5px 0 0;
+
                     a {
+                        padding: 0;
                         color: $text-color;
                         text-transform: initial;
-                        font-size: 14px;
-                        font-weight: 500;
-                        display: block;
-                        padding: 8px 15px;
-                        line-height: 1;
-                        transition: all 300ms ease;
+                        font-size: 15px;
 
-                        &:hover {
-                            background: $theme-color2;
-                        }
-
-                        @media (width <= 1199px) {
+                        @media (width <= 1279px) {
                             font-size: 15px;
+                        }
+                    }
+
+                    &.distinguished {
+                        a {
+                            color: $theme-color3;
+                            font-weight: 700;
+                            // border-bottom: 1px solid $theme-color3;
+                            // margin: 0 0 5px;
                         }
                     }
                 }
@@ -201,45 +210,39 @@
                     transform: scale(1);
                 }
 
-                &--fixed {
-                    @media (width >= 1200px) {
-                        top: 56px;
-                    }
-                }
-
-                @media (width >= 1200px) {
+                @media (width >= 1280px) {
                     transform-origin: top;
                     transform: scale(1, 0);
-                    transition: all 350ms ease;
+                    transition: all 250ms ease;
                     position: absolute;
-                    top: 66px;
+                    top: 40px;
                     background: $white;
-                    padding: 0;
+                    padding: 20px;
                     left: 5px;
                     z-index: 10;
+                    min-width: 300px;
+                    box-shadow: 0 18px 18px -18px rgb(0 0 0 / 40%);
                 }
 
-                @media (width <= 1199px) {
-                    padding: 12px 0 15px;
-                    background: $very-light-gray;
+                @media (width <= 1279px) {
+                    padding: 15px 0 20px;
+                    background: #fafafa;
                     display: none;
-                    left: 0;
-                    right: 0;
-                    max-width: calc(100% - 30px);
                 }
             }
 
-            @media (width <= 1199px) {
+            @media (width <= 1279px) {
                 width: 100%;
-                margin: 0 0 0 15px;
+                text-align: center;
+                margin: 0;
             }
         }
 
-        @media (width >= 1200px) {
-            transition: all 350ms ease-in-out;
+        @media (width >= 1280px) {
+            transition: all 350ms ease;
         }
 
-        @media (width <= 1199px) {
+        @media (width <= 1279px) {
             flex-direction: column;
             background: $white;
             color: $text-color;
@@ -247,60 +250,13 @@
             top: calc(100% - 2px);
             display: none;
             z-index: 10;
-            left: -15px;
+            left: rem-calc(-15);
             width: calc(100% + 30px);
             padding: 25px 0 30px;
-            height: calc(100dvh - 178px);
         }
     }
 
-    &__cart-icon {
-        position: relative;
-        margin: 0 10px 0 30px;
-
-        img,
-        svg {
-            max-width: 40px;
-            display: block;
-            position: relative;
-            z-index: 1;
-
-            /* temporary styles */
-            filter: brightness(0);
-            height: 40px;
-            width: 40px;
-        }
-
-        // &--subpage {
-        //   img {
-        //     filter: brightness(0);
-        //   }
-        // }
-
-        span {
-            position: absolute;
-            right: -13px;
-            top: -5px;
-            z-index: 2;
-            width: 22px;
-            height: 22px;
-            color: $white;
-            background: $theme-color;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 15px;
-            border-radius: 50%;
-            transition: all 300ms ease;
-
-            &.active {
-                animation: pulse 700ms forwards ease-in-out;
-            }
-        }
-    }
-
-    @media (width <= 991px) {
+    @media (width <= 1279px) {
         padding: 10px 0;
         min-height: 65px;
     }

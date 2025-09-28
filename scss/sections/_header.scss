@@ -10,6 +10,7 @@
 
     /* temporary styles */
     background: $white;
+    box-shadow: 0 9px 29px -16px rgb(0 0 0 / 26%);
 
     &--fixed {
         box-shadow: 0 0 19px -10px rgba($dark, 0.7);
@@ -17,15 +18,19 @@
         min-height: 70px;
         top: -45px;
 
-        @media (width <= 991px) {
+        @media (width <= 1279px) {
             top: -75px;
         }
     }
 
+    // &--subpage {
+    //   box-shadow: none;
+    // }
+
     // &--open {
     //   background: rgba($dark, 0.85);
 
-    //   @media(max-width: 991px) {
+    //   @media(max-width: 1279px) {
     //     background: $dark;
     //   }
     // }
@@ -36,7 +41,7 @@ body.admin-bar {
         top: 32px;
 
         &--fixed {
-            top: -13px;
+            top: rem-calc(-13);
         }
     }
 }

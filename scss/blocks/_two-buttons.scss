@@ -19,10 +19,6 @@
     }
 
     &__button {
-        &:last-child {
-            margin: 0 0 0 15px;
-        }
-
         @media (width <= 767px) {
             min-width: 203px;
             text-align: center;
