@@ -1,10 +1,17 @@
 .subpage-hero {
     width: 100%;
     position: relative;
-    margin: 0 0 80px;
 
     &--background {
-        background: $dark;
+        background: linear-gradient(
+            195deg,
+            rgb(55 39 114 / 100%) 0%,
+            rgb(55 39 114 / 100%) 43%,
+            rgb(60 66 143 / 100%) 71%,
+            rgb(63 84 162 / 100%) 86%,
+            rgb(71 125 206 / 100%) 99%,
+            rgb(74 144 226 / 100%) 100%
+        );
     }
 
     &__background {
@@ -14,7 +21,6 @@
         left: 0;
         top: 0;
         right: 0;
-        z-index: 1;
 
         img {
             object-position: center left;
@@ -22,46 +28,84 @@
         }
 
         &--plain {
-            background: $dark;
+            background: linear-gradient(
+                195deg,
+                rgb(55 39 114 / 100%) 0%,
+                rgb(55 39 114 / 100%) 43%,
+                rgb(60 66 143 / 100%) 71%,
+                rgb(63 84 162 / 100%) 86%,
+                rgb(71 125 206 / 100%) 99%,
+                rgb(74 144 226 / 100%) 100%
+            );
         }
-    }
-
-    &__overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        inset: 0;
-        z-index: 0;
-        background: linear-gradient(
-            61deg,
-            rgb(28 30 43) 0%,
-            rgb(28 30 43 / 70%) 23%,
-            rgb(28 30 43 / 60%) 48%,
-            rgb(28 30 43 / 40%) 89%,
-            rgb(28 30 43 / 20%) 100%
-        );
     }
 
     &__wrapper {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 80px 0 90px;
         position: relative;
         z-index: 2;
         text-align: center;
-        padding: 60px 0;
+        gap: 20px;
+
+        &--column {
+            flex-direction: column;
+            padding: 50px 0 90px;
+
+            @media (width <= 767px) {
+                padding: 50px 0 80px;
+            }
+        }
 
         @media (width <= 767px) {
-            padding: 50px 0;
+            padding: 70px 0;
+            flex-direction: column;
         }
     }
 
     &__title {
         color: $white;
+        position: relative;
+        font-size: 40px;
 
-        &--white {
+        &--archive {
             color: $white;
+        }
+
+        span {
+            display: block;
+            margin: 10px auto 0;
+            color: $white;
+
+            @extend .h3;
+        }
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+
+        img,
+        svg {
+            filter: brightness(0) invert(1);
+        }
+
+        @media (width <= 767px) {
+            flex-shrink: 0;
+        }
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 1.5;
+        color: $white;
+        text-align: center;
+
+        @media (width >= 1200px) {
+            max-width: 700px;
+            margin: 20px auto 0;
         }
     }
 }

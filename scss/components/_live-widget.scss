@@ -1,0 +1,8 @@
+.live-widget {
+    width: 100%;
+    padding: 80px 0;
+
+    @media (width <= 767px) {
+        padding: 40px 0;
+    }
+}
