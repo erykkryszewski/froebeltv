@@ -8,7 +8,7 @@ $live_code = get_field("live_code", "options");
 ?>
 
 <main id="main" class="main <?php if (!is_front_page()) { echo 'main--subpage'; } ?> <?php if (strpos($url, 'polityka-prywatnosci') !== false || strpos($url, 'regulamin') !== false) { echo 'main--rules-page'; } ?>">
-    <div class="subpage-hero">
+    <!-- <div class="subpage-hero">
         <div class="subpage-hero__background subpage-hero__background--plain"></div>
         <div class="container">
             <div class="subpage-hero__wrapper">
@@ -18,11 +18,11 @@ $live_code = get_field("live_code", "options");
                 <h1 class="subpage-hero__title">Transmisja LIVE</h1>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <?php if(!empty($live_code)):?>
     <div class="live-widget">
-        <div class="container">
+        <div class="container-fluid container-fluid--padding">
             <div class="live-widget__wrapper"><?php echo $live_code;?></div>
         </div>
     </div>

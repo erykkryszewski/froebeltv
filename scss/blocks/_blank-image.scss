@@ -9,8 +9,9 @@
     img {
         display: block;
         width: 100%;
-        min-height: 500px;
         border-radius: 25px;
+        margin: 0 auto;
+        max-width: 100%;
 
         @media (width <= 767px) {
             min-height: 200px;
